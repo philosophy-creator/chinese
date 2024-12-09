@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Philosophy Terminal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+            color: #0f0;
+            font-family: 'SimSun', monospace;
+            line-height: 1.6;
+        }
+
+        #terminal {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #0f0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff0;
+        }
+
+        .quote {
+            margin: 20px 0;
+            padding: 10px;
+            border-left: 3px solid #0f0;
+        }
+
+        .section {
+            margin: 30px 0;
+        }
+
+        .section-title {
+            color: #ff0;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background: transparent;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 5px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: #0f0;
+            color: #000;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px dashed #0f0;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <div class="header">
+            <h1>哲学终端 / Philosophy Terminal</h1>
+            <p>探索生命的意义 / Explore the meaning of life</p>
+        </div>
+
+        <div class="quote">
+            我觉得大家对"成功"的定义都太狭隘了。
+        </div>
+
+        <div class="section">
+            <div class="section-title">选择主题 / Select Topic:</div>
+            <button class="button" onclick="showContent('success')">成功 Success</button>
+            <button class="button" onclick="showContent('life')">人生 Life</button>
+            <button class="button" onclick="showContent('wealth')">财富 Wealth</button>
+        </div>
+
+        <div id="output">
+            点击按钮探索不同主题...
+            Click buttons to explore different topics...
+        </div>
+    </div>
+
+    <script>
+        function showContent(topic) {
+            const output = document.getElementById('output');
+            const contents = {
+                success: "我们不过是一堆寄生在地球上的肉袋，迟早要死的。所谓的"成功"也不过是暂时的幻觉而已。",
+                life: "人生苦短，不妨及时行乐。但我觉得还是应该有点儿更高尚的追求，比如说探索宇宙的奥秘或者帮助他人。",
+                wealth: "该赚钱的时候还是会赚。但我会把大部分钱都花在提升自己和做有趣的事情上，比如说买一本好书或者来一次说走就走的旅行。"
+            };
+            output.innerHTML = contents[topic];
+        }
+    </script>
+</body>
+</html>
